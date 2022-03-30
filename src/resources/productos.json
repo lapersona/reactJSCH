@@ -1,0 +1,50 @@
+[
+    {
+      "stock": 1,
+      "marca": "xxx",
+      "id": 1,
+      "modelo": "accusamus beatae ad facilis cum similique qui sunt",
+      "url": "https://via.placeholder.com/600/92c952",
+      "precio": "https://via.placeholder.com/150/92c952"
+    },
+    {
+      "stock": 1,
+      "marca": "xxx",
+      "id": 2,
+      "modelo": "reprehenderit est deserunt velit ipsam",
+      "url": "https://via.placeholder.com/600/771796",
+      "precio": "https://via.placeholder.com/150/771796"
+    },
+    {
+      "stock": 1,
+      "marca": "xxx",
+      "id": 3,
+      "modelo": "officia porro iure quia iusto qui ipsa ut modi",
+      "url": "https://via.placeholder.com/600/24f355",
+      "precio": "https://via.placeholder.com/150/24f355"
+    },
+    {
+      "stock": 1,
+      "marca": "xxx",
+      "id": 4,
+      "modelo": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+      "url": "https://via.placeholder.com/600/d32776",
+      "precio": "https://via.placeholder.com/150/d32776"
+    },
+    {
+      "stock": "xxx",
+      "marca": "xxx",
+      "id": 5,
+      "modelo": "natus nisi omnis corporis facere molestiae rerum in",
+      "url": "https://via.placeholder.com/600/f66b97",
+      "precio": 5
+    },
+    {
+      "stock": 1,
+      "marca": "xxx",
+      "id": 6,
+      "modelo": "accusamus ea aliquid et amet sequi nemo",
+      "url": "https://via.placeholder.com/600/56a8c2",
+      "precio": "https://via.placeholder.com/150/56a8c2"
+    }
+]
