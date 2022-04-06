@@ -1,7 +1,6 @@
 import { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { CartContext } from "./CartContext";
-import Memo from "./Memo";
 import '../styles/style.blue.css';
 import ItemCount from "./ItemCount"
 import NavBar from "./NavBar"
@@ -50,17 +49,16 @@ const ItemDetail = ({id, marca, modelo, img, precio, stock, detail, desc}) => {
             <p>{detail}</p>
             <h4>Precio: {precio} U$D</h4><br/>
             <section style={{display: "inline-block"}}>
-            <Memo/>
             <>
                 {
-                    !isInCart(id) ?
+                    isInCart(id) ?
                     <ItemCount
                         max={stock}
                         cantidad={cantidad}
                         setCantidad={setCantidad}
                         onAdd={agregarAlCarrito}
-            />
-            : <Link to="/cart" className="btn btn-success d-block my-3">Terminar Compra</Link>
+            /> : 
+            <Link to="/cart" className="btn btn-success d-block my-3">Terminar Compra</Link>
             }
             </>
             </section>
