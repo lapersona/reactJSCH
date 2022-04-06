@@ -8,7 +8,7 @@ function Ventas() {
         <>
           <TopBar/>
           <NavBar/>
-          <section className="py-5 dark-overlay-xl mante-back">
+          <section className="py-5 dark-overlay-xl ventas-back">
           <br/><br/><br/><br/><br/>
           </section>
           <ItemListContainer></ItemListContainer>

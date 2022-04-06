@@ -1,11 +1,17 @@
-import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import '../styles/style.blue.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
-function ItemCount({stock, onAdd})  {
-  const [count, setCount] = useState(1);
+function ItemCount({max = 5, onAdd, cantidad, setCantidad})  {
+
+    const handleAdd = () => {
+      cantidad < max && setCantidad(cantidad + 1)
+    }
+
+    const handleRemove = () => {
+      cantidad > 0 && setCantidad(cantidad - 1)
+    }
 
   return (
     <>
@@ -13,26 +19,25 @@ function ItemCount({stock, onAdd})  {
         <div className="d-flex flex-row justify-content-between">
           <Button
             variant="outline-primary"
-            disabled={count < 2}
-            onClick={() => {
-              setCount(count - 1);
-            }}
+            disabled={cantidad === 0}
+            onClick={handleRemove}
           >
             -
           </Button>
-          <div>{count}</div>
+          <span>{cantidad}</span>
           <Button
             variant="outline-primary"
-            disabled={count >= stock}
-            onClick={() => {
-              setCount(count + 1);
-            }}
+            disabled={cantidad === max}
+            onClick={handleAdd}
           >
             +
           </Button>
         </div>
         <div className="d-flex justify-content-center">
-          <Button variant="outline-primary" onClick={() => onAdd()}>
+          <Button 
+            variant="outline-primary"
+            disabled={cantidad === 0} 
+            onClick={() => onAdd()}>
           <FontAwesomeIcon icon={faCartPlus} />
           </Button>
         </div>

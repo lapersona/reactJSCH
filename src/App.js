@@ -7,9 +7,12 @@ import Ventas from './components/Ventas';
 import Cirrus from './components/Cirrus';
 import NotFound from './components/NotFound';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import { CartProvider } from './components/CartContext';
+import Cart from './components/Cart';
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>}/>
@@ -17,10 +20,12 @@ function App() {
       <Route path="/mantyhabilit" element={<ManteHabilit/>}/>
       <Route path="/ventas" element={<Ventas/>}/>
       <Route path="/cirrus" element={<Cirrus/>}/>
+      <Route path="/cart" element={<Cart/>}/>
       <Route path="/detail/:itemId" element={ <ItemDetailContainer/> } />
       <Route path='*' element={<NotFound/>}/>
     </Routes>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 

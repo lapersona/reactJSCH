@@ -16,11 +16,12 @@ function ItemListContainer(props) {
   },[]);
 
   return (
-    <>
+    <div className="bg-gray-400">
       <br/><br/>
       <h2> {props.greeting} </h2>
       <ItemList itemList={itemList} />
-    </>
+      </div>
+    
   );
 }
 

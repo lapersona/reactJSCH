@@ -31,33 +31,33 @@ export const stock = [
         modelo: 'G5'
     },
     {
-        marca: 'Bendix/King',
+        marca: 'Garmin',
         id: 4,
-        desc: 'The AeroNav 900 is a fullfeatured GPS/FMS/NAV/COM with hybrid touch, wireless connectivity, and synthetic vision built right in.',
-        detail: 'The AeroNav 900 is a fullfeatured GPS/FMS/NAV/COM with hybrid touch, wireless connectivity, and synthetic vision built right in.',
-        precio: 4500,
-        img: 'https://honeywell.scene7.com/is/image/honeywell/BK-AeroNav900',
+        desc: 'TAP INTO A NEW GENERATION OF FASTER, SMARTER AVIONICS',
+        detail: 'With more pixels, more processing power, more speed and performance, our GTN 750Xi system brings exciting new growth capabilities to the industry’s premier GPS/Nav/Comm/MFD platform. ',
+        precio: 18245,
+        img: 'https://www.aeronautical.co.za/wp-content/uploads/2020/01/GTN-750Xi-13.png',
         stock: 5,
-        modelo: 'AERONAV 900/880'
+        modelo: 'GTN™ 750Xi'
     },
     {
         marca: 'Garmin',
         id: 5,
-        desc: 'Lorem ipsum producto 5',
-        detail: 'Stay on course with the GI 106B, a high-quality course deviation indicator from Garmin. The panel-mounted GI 106B includes a VOR/LOC/GPS needle as well as a glideslope needle, which can be hidden and disabled by an installer if the glideslope functionality is not needed. The GI 106B contains LED-lit GPS, NAV and VLOC mode annunciators, for an easy-to-read and modern look.',
-        precio: 3295,
-        img: 'https://static.garmincdn.com/en/products/013-00593-00/g/cf-lg.jpg',
+        desc: 'ADVANCED PORTABLE AVIATION NAVIGATION WITH A 7” DISPLAY',
+        detail: 'Fly confidently with our rugged, reliable, purpose-built GPS that includes our latest in-flight features, including IFR approaches, arrivals and departures, plus our familiar touchscreen interface.',
+        precio: 1599,
+        img: 'https://ultralight.com.ar/wp-content/uploads/2021/11/AERA-760-PALIN.png',
         stock: 50,
-        modelo: 'GI-106B'
+        modelo: 'aera® 760'
     },
     {
-        marca: 'Bendix/King',
+        marca: 'Garmin',
         id: 6,
-        desc: 'AeroCruze 230/330',
-        detail: 'AeroCruze 230/330',
-        precio: 6500,
-        img: 'https://www.bendixking.com/content/dam/bendixking/en/images/media-library/low-res/bendixkingaerocruze230-0015_lores%20(1).png',
+        desc: 'ONE DISPLAY. ALL YOUR ENGINE, FUEL AND ELECTRICAL INFORMATION.',
+        detail: 'Replace analog engine gauges in your airplane with this advanced, cost-effective and easy-to-install engine indication system (EIS). So you can manage your engine operation and protect your investment.',
+        precio: 4495,
+        img: 'https://shop.midwestpanels.com/wp-content/uploads/2021/12/001b_GI275_v2.40-Main-EIS-6-cyl-T-Hero-300x300.png',
         stock: 20,
-        modelo: 'AeroCruze 230/330'
+        modelo: 'GI 275 Engine Indication System (EIS)'
     },
 ]

@@ -49,9 +49,14 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.cart-widget {
+  text-decoration: none;
+  color: #fff;
+}
+
 .ventas-back {
-  background: url('../resources/ventas.jpg');
-  background-position: center;
+  background: url('https://static.garmincdn.com/contentful/directory/aviation/42769-1-AVIATION.jpg');
+  background-position: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }

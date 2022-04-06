@@ -8,7 +8,7 @@ import client6 from '../resources/cessna.png';
 
 function ClientSection() {
     return (
-        <section className="py-5">
+        <section className="py-5 bg-gray-400">
         <div className="container py-4">
           <header className="mb-5">
             <h2 className="text-uppercase lined lined-center mb-4">Nuestros Clientes</h2>
