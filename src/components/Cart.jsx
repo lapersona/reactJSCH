@@ -19,7 +19,7 @@ const Cart = () => {
                     <h2>Tu carrito está vacío</h2>
                     <hr/>
                     <h5>Vuelve al sector Ventas para comprar.</h5>
-                    <Link to={"/ventas"} className="btn btn-primary">Home</Link>
+                    <Link to={"/ventas"} className="btn btn-primary">Ventas</Link>
                 </div>
             </>
         )
