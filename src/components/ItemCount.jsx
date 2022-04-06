@@ -18,7 +18,7 @@ function ItemCount({max = 5, onAdd, cantidad, setCantidad})  {
       <div style={{ width: "240px" }}>
         <div className="d-flex flex-row justify-content-between">
           <Button
-            variant="outline-primary"
+            className="btn btn-primary"
             disabled={cantidad === 0}
             onClick={handleRemove}
           >
@@ -26,7 +26,7 @@ function ItemCount({max = 5, onAdd, cantidad, setCantidad})  {
           </Button>
           <span>{cantidad}</span>
           <Button
-            variant="outline-primary"
+            className="btn btn-primary"
             disabled={cantidad === max}
             onClick={handleAdd}
           >
@@ -35,7 +35,7 @@ function ItemCount({max = 5, onAdd, cantidad, setCantidad})  {
         </div>
         <div className="d-flex justify-content-center">
           <Button 
-            variant="outline-primary"
+            className="btn btn-primary"
             disabled={cantidad === 0} 
             onClick={() => onAdd()}>
           <FontAwesomeIcon icon={faCartPlus} />

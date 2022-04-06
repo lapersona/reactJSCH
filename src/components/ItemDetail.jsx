@@ -1,6 +1,7 @@
 import { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { CartContext } from "./CartContext";
+import { Button } from "react-bootstrap";
 import '../styles/style.blue.css';
 import ItemCount from "./ItemCount"
 import NavBar from "./NavBar"
@@ -58,12 +59,12 @@ const ItemDetail = ({id, marca, modelo, img, precio, stock, detail, desc}) => {
                         setCantidad={setCantidad}
                         onAdd={agregarAlCarrito}
             /> : 
-            <Link to="/cart" className="btn btn-success d-block my-3">Terminar Compra</Link>
+            <Link to="/cart"><Button className="btn btn-primary">Terminar Compra</Button></Link>
             }
             </>
             </section>
             <hr/>
-            <button className="btn btn-outline-primary" onClick={handleNavigate}>Volver</button>
+            <Button className="btn btn-primary" onClick={handleNavigate}>Volver</Button>
         </div><br/>
         <Footer/>
         </>
