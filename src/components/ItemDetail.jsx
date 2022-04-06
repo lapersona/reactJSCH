@@ -51,7 +51,7 @@ const ItemDetail = ({id, marca, modelo, img, precio, stock, detail, desc}) => {
             <section style={{display: "inline-block"}}>
             <>
                 {
-                    isInCart(id) ?
+                    !isInCart(id) ?
                     <ItemCount
                         max={stock}
                         cantidad={cantidad}
