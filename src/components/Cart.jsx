@@ -51,7 +51,7 @@ const Cart = () => {
                 ))
             }
 
-            <h3>TOTAL: ${cartTotal()}</h3>
+            <h3>TOTAL: U$D{cartTotal()}</h3>
             <hr/>
             <Button variant="outline-success" size="md" onClick={emptyCart}>Finalizar Compra</Button>
             <Button variant="outline-danger" size="md" onClick={emptyCart}>Vaciar Carrito</Button>
