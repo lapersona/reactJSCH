@@ -15,7 +15,7 @@ const Cart = () => {
                     <TopBar/>
                     <NavBar/>
                     <Carousel/>    
-                    <div className="container text-center my-5">
+                    <div className="container-fluid text-center bg-gray-400" style={{padding: "2rem 2rem 2rem 2rem"}}>
                     <h2>Tu carrito está vacío</h2>
                     <hr/>
                     <h5>Vuelve al sector Ventas para comprar.</h5>
@@ -30,7 +30,7 @@ const Cart = () => {
         <TopBar/>
         <NavBar/>
         <Carousel/>  
-        <div className="container my-5 text-center">
+        <div className="container-fluid text-center bg-gray-400" style={{padding: "2rem 2rem 2rem 2rem"}}>
             <h2>Tu Carrito</h2>
             <hr/>
 
@@ -53,7 +53,7 @@ const Cart = () => {
 
             <h3>TOTAL: U$D{cartTotal()}</h3>
             <hr/>
-            <Button variant="outline-success" size="md" onClick={emptyCart}>Finalizar Compra</Button>
+            <Link to={"/"}><Button variant="outline-success" size="md">Finalizar Compra</Button></Link>
             <Button variant="outline-danger" size="md" onClick={emptyCart}>Vaciar Carrito</Button>
         </div>
         </>

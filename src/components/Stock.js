@@ -56,7 +56,7 @@ export const stock = [
         desc: 'ONE DISPLAY. ALL YOUR ENGINE, FUEL AND ELECTRICAL INFORMATION.',
         detail: 'Replace analog engine gauges in your airplane with this advanced, cost-effective and easy-to-install engine indication system (EIS). So you can manage your engine operation and protect your investment.',
         precio: 4495,
-        img: 'https://shop.midwestpanels.com/wp-content/uploads/2021/12/001b_GI275_v2.40-Main-EIS-6-cyl-T-Hero-300x300.png',
+        img: 'https://res.garmin.com/en/products/010-GI275-10/g/cf-lg-e19e4e1c-b0e4-4404-a0b9-5dbcece72321.jpg',
         stock: 20,
         modelo: 'GI 275 Engine Indication System (EIS)'
     },

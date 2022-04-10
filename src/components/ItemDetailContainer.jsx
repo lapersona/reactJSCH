@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { pedirDatos } from "./PedirDatos";
 import ItemDetail from "./ItemDetail"
 import { Spinner } from "react-bootstrap";
 import TopBar from "./TopBar";
-import NavBar from "./NavBar"
+import NavBar from "./NavBar";
+import Carousel from "./Carousel";
+import { db } from "../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
 
 
 const ItemDetailContainer = () => {
@@ -17,15 +19,16 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        pedirDatos()
-            .then((res) => {
-                setItem( res.find((prod) => prod.id === Number(itemId)) )
+        const docRef = doc(db, "productos", itemId)
+        getDoc(docRef)
+            .then(doc => {
+                const prod = {id: doc.id, ...doc.data()}
+                setItem(prod)
             })
-            .finally(() => {
-                setLoading(false)
-            })
-
+            .finally(() => setLoading(false))
     }, [itemId])
+
+    
 
     return (
         <div className="container-fluid bg-gray-400" style={{paddingRight:'0px', paddingLeft:'0px'}}>
@@ -35,6 +38,7 @@ const ItemDetailContainer = () => {
                 <>
                 <TopBar/>
                 <NavBar/>
+                <Carousel/>
                 <div className="container text-center">
                 <Spinner animation="grow" variant="dark" />
                 <h6>Cargando, por favor espere..</h6>
