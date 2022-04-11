@@ -2,6 +2,7 @@ import '../styles/style.blue.css';
 import TopBar from './TopBar';
 import NavBar from './NavBar';
 import Footer from './Footer';
+import Carousel from './Carousel'
 import Anac from '../resources/ANAC_logo.png';
 
 function ManteHabilit() {
@@ -9,9 +10,7 @@ function ManteHabilit() {
         <>
             <TopBar/>
             <NavBar/>
-            <section className="py-5 dark-overlay-xl mante-back">
-            <br></br><br></br><br></br><br></br><br></br>
-            </section>
+            <Carousel/>
             <section className="py-5 bg-fixed bg-gray-300">
                 <div className="container py-4">
                     <header className="mb-5">

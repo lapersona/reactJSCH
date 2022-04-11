@@ -7,7 +7,7 @@ function Footer() {
           <div className="container">
             <div className="row text-center">
               <div className="text-md-center">
-                <p className="mb-0 text-sm text-gray-500">2022. Cielo S.A. Representante exclusivo de Cirrus Aircraft.</p>
+                <p className="mb-0 text-sm text-gray-500">2022. Cielo Aviones S.A. Representante exclusivo de Cirrus Aircraft.</p>
               </div>
             </div>
           </div>
