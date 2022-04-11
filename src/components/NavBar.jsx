@@ -12,8 +12,8 @@ function NavBar() {
           <div className="container py-3 py-lg-0 px-lg-0">
             <Link to="/"><a className="navbar-brand" href="/">
               <img className=" d-md-inline-block" src={logo} alt="Cielo logo"></img></a></Link>
-            <button className="navbar-toggler text-primary border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navigationCollapse" aria-controls="navigationCollapse" aria-expanded="false" aria-label="Toggle navigation"><span className="sr-only">Toggle navigation</span><i className="fas fa-align-justify"></i></button>
-            <div className="collapse navbar-collapse" id="navigationCollapse">
+              <button className="navbar-toggler text-primary border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navigationCollapse" aria-controls="navigationCollapse" aria-expanded="false" aria-label="Toggle navigation"><span className="sr-only">Toggle navigation</span><i className="fas fa-align-justify"></i></button>
+              <div className="collapse navbar-collapse" id="navigationCollapse">
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                 <Link className="btn btn-outline-light btn-sm" to="/">
                 <li className="nav-item dropdown"><a className="nav-link" id="hpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href=" ">HOME</a>
