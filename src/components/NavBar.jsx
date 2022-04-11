@@ -1,6 +1,9 @@
 import logo from '../resources/cielo-logo.png';
 import '../styles/style.blue.css';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CartWidget from './CartWidget';
+import { faEnvelope , faPhone } from '@fortawesome/free-solid-svg-icons';
 
 function NavBar() {
     return (
@@ -33,6 +36,11 @@ function NavBar() {
                 </li>
                 </Link>
               </ul>
+              <div >
+                <FontAwesomeIcon icon={faEnvelope} style={{marginRight: '8px'}}/>
+                <FontAwesomeIcon icon={faPhone} style={{marginRight: '8px'}}/>
+                <CartWidget/>
+            </div>
             </div>
           </div>
         </div>
