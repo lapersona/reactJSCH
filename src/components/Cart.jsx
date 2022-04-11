@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap"
 import TopBar from "./TopBar"
 import NavBar from "./NavBar"
 import Carousel from "./Carousel"
+import Footer from "./Footer"
 
 const Cart = () => {
 
@@ -20,7 +21,8 @@ const Cart = () => {
                     <hr/>
                     <h5>Vuelve al sector Ventas para comprar.</h5>
                     <Link to={"/ventas"} className="btn btn-primary">Ventas</Link>
-                </div>
+                    </div>
+                    <Footer/>
             </>
         )
     }
@@ -56,6 +58,7 @@ const Cart = () => {
             <Link to={"/"}><Button variant="outline-success" size="md">Finalizar Compra</Button></Link>
             <Button variant="outline-danger" size="md" onClick={emptyCart}>Vaciar Carrito</Button>
         </div>
+        <Footer/>
         </>
     )
 }
