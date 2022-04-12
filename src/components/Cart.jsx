@@ -41,8 +41,8 @@ const Cart = () => {
                         <h4>{item.marca}</h4>
                         <h5>{item.modelo}</h5>
                         <p>Cantidad: {item.cantidad}</p>
-                        <h5>Precio Unitario: U$D{item.precio}</h5>
-                        <h4>Precio Total: U$D{item.precio * item.cantidad}</h4>
+                        <h5>Precio Unitario: U$D {item.precio}</h5>
+                        <h4>Precio Total: U$D {item.precio * item.cantidad}</h4>
                         <Button variant="outline-primary" size="sm"
                             onClick={() => removeItem(item.id)}
                         >Eliminar Producto
@@ -54,7 +54,7 @@ const Cart = () => {
 
             <h3>TOTAL: U$D{cartTotal()}</h3>
             <hr/>
-            <Link to={"/"}><Button variant="outline-success" size="md">Finalizar Compra</Button></Link>
+            <Link to={"/checkout"}><Button variant="outline-success" size="md">Finalizar Compra</Button></Link>
             <Button variant="outline-danger" size="md" onClick={emptyCart}>Vaciar Carrito</Button>
         </div>
         <Footer/>

@@ -2,8 +2,8 @@ import logo from '../resources/cielo-logo.png';
 import '../styles/style.blue.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import CartWidget from './CartWidget';
 import { faEnvelope , faPhone } from '@fortawesome/free-solid-svg-icons';
+import CartWidget from './CartWidget';
 
 function NavBar() {
     return (
