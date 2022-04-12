@@ -2,13 +2,17 @@ import TopBar from "./TopBar";
 import NavBar from "./NavBar";
 import Carousel from "./Carousel";
 import Footer from "./Footer";
+import swal from "sweetalert";
 import { useContext, useState } from "react";
+import { Navigate } from "react-router-dom";
 import { CartContext } from "./CartContext";
 import { Button } from "react-bootstrap";
+import { db } from "../firebase/config";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 const Checkout = () => {
 
-    const {cart, cartTotal} = useContext(CartContext);
+    const {cart, cartTotal, emptyCart} = useContext(CartContext);
 
     const [ values, setValues] = useState({
         name: "",
@@ -16,6 +20,8 @@ const Checkout = () => {
         address: "",
         cellphone: "",
     });
+
+    const [ orderId, setOrderId ] = useState("");
 
     const handleInputChange = (e) => {
         setValues({
@@ -26,13 +32,62 @@ const Checkout = () => {
 
     const sendOrder = (e) => {
         e.preventDefault();
+        if (values.name === "" || values.email === "" || values.address === "" || values.cellphone === "") {
+
+            swal("Error", "Porfavor, complete todos los datos de comprador.", "error");
+
+        } else {
+
         const order = {
             items: cart,
             total: cartTotal(),
             buyer: {...values},
+            time: Timestamp.fromDate(new Date())
         }
-        console.log(order);
+        
+        const ordersRef = collection(db, 'orders');
+        swal("Enviando pedido", "Espere un momento por favor...", "info", {
+            timer: 2000,
+            buttons: false
+        });
+        setTimeout(() => {
+        addDoc(ordersRef, order)
+            .then((doc) => {
+                setOrderId(doc.id);
+                emptyCart();
+            }, 4000);
+            })
+    }}
+
+    if (orderId) {
+        swal("Pedido enviado", "Su pedido ha sido enviado con éxito.", "success");
+        return (
+            <>
+            <TopBar/>
+            <NavBar/>
+            <Carousel/>  
+            <div className="container-fluid text-center bg-gray-400" style={{padding: "2rem 2rem 2rem 2rem"}}>
+                <h2>Resumen de Compra</h2>
+                <hr/>
+                <h3>¡Tu orden fue registrada exitosamente!</h3>
+                <h4>Tu numero de orden es la siguiente:</h4>
+                <h5>{orderId}</h5>
+                <hr/>
+                <h4>Datos de comprador:</h4>
+                <h6>Nombre: {values.name}</h6>
+                <h6>Email: {values.email}</h6>
+                <h6>Dirección: {values.address}</h6>
+                <h6>Celular: {values.cellphone}</h6>
+            </div>
+            <Footer/>
+            </>
+        )
+    }        
+
+    if (cart.length === 0) {
+        return <Navigate to="/"/>
     }
+    
     return (
         <>
         <TopBar/>
