@@ -8,7 +8,7 @@ import { Navigate, Link } from 'react-router-dom';
 import { CartContext } from './CartContext';
 import { Button } from 'react-bootstrap';
 import { db } from '../firebase/config';
-import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { collection, addDoc, Timestamp, getDoc, updateDoc } from 'firebase/firestore';
 
 const Checkout = () => {
 
@@ -46,17 +46,28 @@ const Checkout = () => {
         }
         
         const ordersRef = collection(db, 'orders');
+
+        cart.forEach((item) => {
+            const docRef = (db, 'productos', item.id);
+            getDoc(docRef).then((doc) => {
+                updateDoc(docRef, {
+                    stock: doc.data().stock - item.cantidad
+                })
+            })
+        })
+        
         swal('Enviando pedido', 'Espere un momento por favor...', 'info', {
             timer: 2000,
             buttons: false
         });
+
         setTimeout(() => {
         addDoc(ordersRef, order)
             .then((doc) => {
                 setOrderId(doc.id);
                 emptyCart();
             }, 4000);
-            })
+        })
     }}
 
     if (orderId) {
