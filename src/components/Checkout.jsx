@@ -1,27 +1,27 @@
-import TopBar from "./TopBar";
-import NavBar from "./NavBar";
-import Carousel from "./Carousel";
-import Footer from "./Footer";
-import swal from "sweetalert";
-import { useContext, useState } from "react";
-import { Navigate } from "react-router-dom";
-import { CartContext } from "./CartContext";
-import { Button } from "react-bootstrap";
-import { db } from "../firebase/config";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
+import TopBar from './TopBar';
+import NavBar from './NavBar';
+import Carousel from './Carousel';
+import Footer from './Footer';
+import swal from 'sweetalert';
+import { useContext, useState } from 'react';
+import { Navigate, Link } from 'react-router-dom';
+import { CartContext } from './CartContext';
+import { Button } from 'react-bootstrap';
+import { db } from '../firebase/config';
+import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
 const Checkout = () => {
 
     const {cart, cartTotal, emptyCart} = useContext(CartContext);
 
     const [ values, setValues] = useState({
-        name: "",
-        email: "",
-        address: "",
-        cellphone: "",
+        name: '',
+        email: '',
+        address: '',
+        cellphone: '',
     });
 
-    const [ orderId, setOrderId ] = useState("");
+    const [ orderId, setOrderId ] = useState('');
 
     const handleInputChange = (e) => {
         setValues({
@@ -32,9 +32,9 @@ const Checkout = () => {
 
     const sendOrder = (e) => {
         e.preventDefault();
-        if (values.name === "" || values.email === "" || values.address === "" || values.cellphone === "") {
+        if (values.name === '' || values.email === '' || values.address === '' || values.cellphone === '') {
 
-            swal("Error", "Porfavor, complete todos los datos de comprador.", "error");
+            swal('Error', 'Porfavor, complete todos los datos de comprador.', 'error');
 
         } else {
 
@@ -46,7 +46,7 @@ const Checkout = () => {
         }
         
         const ordersRef = collection(db, 'orders');
-        swal("Enviando pedido", "Espere un momento por favor...", "info", {
+        swal('Enviando pedido', 'Espere un momento por favor...', 'info', {
             timer: 2000,
             buttons: false
         });
@@ -60,13 +60,13 @@ const Checkout = () => {
     }}
 
     if (orderId) {
-        swal("Pedido enviado", "Su pedido ha sido enviado con éxito.", "success");
+        swal('Pedido enviado', 'Su pedido ha sido enviado con éxito.', 'success');
         return (
             <>
             <TopBar/>
             <NavBar/>
             <Carousel/>  
-            <div className="container-fluid text-center bg-gray-400" style={{padding: "2rem 2rem 2rem 2rem"}}>
+            <div className='container-fluid text-center bg-gray-400' style={{padding: '2rem 2rem 2rem 2rem'}}>
                 <h2>Resumen de Compra</h2>
                 <hr/>
                 <h3>¡Tu orden fue registrada exitosamente!</h3>
@@ -78,6 +78,8 @@ const Checkout = () => {
                 <h6>Email: {values.email}</h6>
                 <h6>Dirección: {values.address}</h6>
                 <h6>Celular: {values.cellphone}</h6>
+                <hr/>
+                <Link to='/'><Button className='btn btn-primary'>Home</Button></Link>
             </div>
             <Footer/>
             </>
@@ -85,7 +87,7 @@ const Checkout = () => {
     }        
 
     if (cart.length === 0) {
-        return <Navigate to="/"/>
+        return <Navigate to='/'/>
     }
     
     return (
@@ -93,10 +95,10 @@ const Checkout = () => {
         <TopBar/>
         <NavBar/>
         <Carousel/>  
-        <div className="container-fluid text-center bg-gray-400" style={{padding: "2rem 2rem 2rem 2rem"}}>
+        <div className='container-fluid text-center bg-gray-400' style={{padding: '2rem 2rem 2rem 2rem'}}>
             <h2>Resumen de Compra</h2>
             <hr/>
-            <div className="container-fluid bg-gray-400">
+            <div className='container-fluid bg-gray-400'>
             {
                 cart.map((item) => (
                     <div key={item.id}>
@@ -110,50 +112,50 @@ const Checkout = () => {
             </div>
             <hr/>
             <h2>Datos de Comprador</h2>
-            <div className="d-flex justify-content-center">
+            <div className='d-flex justify-content-center'>
             <form onSubmit={sendOrder}>
                 <input
-                    className="form-control bg-gray-100"
+                    className='form-control bg-gray-100'
                     type='name'
-                    placeholder="Nombre"
+                    placeholder='Nombre'
                     size={50}
                     name='name'
                     value={values.name}
                     onChange={handleInputChange}
-                    autoComplete="off"
+                    autoComplete='off'
                 />
                 <input
-                    className="form-control bg-gray-100"
-                    type='cellphone'
-                    placeholder="Celular"
+                    className='form-control bg-gray-100'
+                    type='number'
+                    placeholder='Celular'
                     size={50}
                     name='cellphone'
                     value={values.cellphone}
                     onChange={handleInputChange}
-                    autoComplete="off"
+                    autoComplete='off'
                 />
                 <input
-                    className="form-control bg-gray-100"
+                    className='form-control bg-gray-100'
                     type='address'
-                    placeholder="Dirección"
+                    placeholder='Dirección'
                     size={50}
                     name='address'
                     value={values.address}
                     onChange={handleInputChange}
-                    autoComplete="off"
+                    autoComplete='off'
                 />
                 <input
-                    className="form-control bg-gray-100"
+                    className='form-control bg-gray-100'
                     type='email'
-                    placeholder="Email"
+                    placeholder='Email'
                     size={70}
                     name='email'
                     value={values.email}
                     onChange={handleInputChange}
-                    autoComplete="off"
+                    autoComplete='off'
                 />
                 <br/>
-                <Button variant="outline-success" type="submit" size="md">Enviar</Button>
+                <Button variant='outline-success' type='submit' size='md'>Enviar</Button>
             </form>
             </div>
         </div>

@@ -15,7 +15,6 @@ function Item(props) {
         <div>
           <img className="img img-fluid" style={{width: "40%", height: "40%"}} src={props.item.img} alt="img" />
         </div><br/>
-        <h4>Precio: {props.item.precio} U$D</h4><br/>
         <Link to={`/detail/${props.item.id}`}><Button variant="outline-primary" size="sm">
           Mas Informacion
         </Button></Link>
