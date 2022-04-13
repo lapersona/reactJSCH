@@ -41,10 +41,10 @@ const ItemDetail = ({id, marca, modelo, img, precio, stock, detail, desc}) => {
         <TopBar/>
         <NavBar/>
         <Carousel/>
+        <br/><br/>
+        <h2 className="container text-uppercase lined mb-4">{marca} {modelo}</h2><br></br>
         <div className="container text-center">
             <br/>
-            <h1>{marca}</h1>
-            <h2>{modelo}</h2>
             <img src={img} alt={modelo} className="img-fluid"/>
             <p>{desc}</p>
             <p>{detail}</p>

@@ -37,7 +37,7 @@ function NavBar() {
                 </Link>
               </ul>
               <div >
-                <FontAwesomeIcon icon={faEnvelope} style={{marginRight: '8px'}}/>
+                <FontAwesomeIcon icon={faEnvelope} style={{marginRight: '8px', marginLeft: '8px'}}/>
                 <FontAwesomeIcon icon={faPhone} style={{marginRight: '8px'}}/>
                 <CartWidget/>
             </div>

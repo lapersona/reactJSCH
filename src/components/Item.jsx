@@ -21,7 +21,7 @@ function Item(props) {
         </Button></Link>
       </div><br/>
       <section style={{display: "inline-block"}}>
-      </section><br/><br/><hr/>
+      </section><br/><hr/>
     </div>
     <br/>
     </>
