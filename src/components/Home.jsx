@@ -9,13 +9,13 @@ import Footer from './Footer';
 function Home() {
     return (
         <>
-        <TopBar/>
-        <NavBar/>
-        <Carousel/>
-        <ServiceSection/>
-        <BannerSection/>
-        <ClientSection/>
-        <Footer/>
+            <TopBar/>
+            <NavBar/>
+            <Carousel/>
+            <ServiceSection/>
+            <BannerSection/>
+            <ClientSection/>
+            <Footer/>
         </>
     );
 }

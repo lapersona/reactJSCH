@@ -61,13 +61,10 @@ body {
   background-repeat: no-repeat;
 }
 
-.imgAnac {
-  width: 25%;
-  height: 25%;
-}
-
 .banner-back {
-  background: url('../resources/cirrusbanner.jpg');
+  background: url('../resources/banner.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .mante-back {

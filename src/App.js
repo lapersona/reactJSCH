@@ -14,23 +14,23 @@ import Checkout from './components/Checkout';
 
 
 function App() {
-  return (
-    <CartProvider>
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/about" element={<About/>}/>
-      <Route path="/mantyhabilit" element={<ManteHabilit/>}/>
-      <Route path="/ventas" element={<Ventas/>}/>
-      <Route path="/cirrus" element={<Cirrus/>}/>
-      <Route path="/cart" element={<Cart/>}/>
-      <Route path="/detail/:itemId" element={ <ItemDetailContainer/> } />
-      <Route path='/checkout' element={<Checkout/>}/>
-      <Route path='*' element={<NotFound/>}/>
-    </Routes>
-    </BrowserRouter>
-    </CartProvider>
-  );
+    return (
+        <CartProvider>
+        <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/mantyhabilit' element={<ManteHabilit/>}/>
+          <Route path='/ventas' element={<Ventas/>}/>
+          <Route path='/cirrus' element={<Cirrus/>}/>
+          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/detail/:itemId' element={ <ItemDetailContainer/> } />
+          <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='*' element={<NotFound/>}/>
+        </Routes>
+        </BrowserRouter>
+        </CartProvider>
+    );
 }
 
 export default App;

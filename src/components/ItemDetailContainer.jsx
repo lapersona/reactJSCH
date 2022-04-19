@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import ItemDetail from "./ItemDetail"
-import { Spinner } from "react-bootstrap";
-import TopBar from "./TopBar";
-import NavBar from "./NavBar";
-import Carousel from "./Carousel";
-import { db } from "../firebase/config";
-import { doc, getDoc } from "firebase/firestore";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import ItemDetail from './ItemDetail';
+import { Spinner } from 'react-bootstrap';
+import TopBar from './TopBar';
+import NavBar from './NavBar';
+import Carousel from './Carousel';
+import { db } from '../firebase/config';
+import { doc, getDoc } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
 
-        const docRef = doc(db, "productos", itemId)
+        const docRef = doc(db, 'productos', itemId)
         getDoc(docRef)
             .then(doc => {
                 const prod = {id: doc.id, ...doc.data()}
@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
     
 
     return (
-        <div className="container-fluid bg-gray-400" style={{paddingRight:'0px', paddingLeft:'0px'}}>
+        <div className='container-fluid bg-gray-400' style={{paddingRight:'0px', paddingLeft:'0px'}}>
             {
                 loading
                 ? 
@@ -39,8 +39,8 @@ const ItemDetailContainer = () => {
                 <TopBar/>
                 <NavBar/>
                 <Carousel/>
-                <div className="container text-center">
-                <Spinner animation="grow" variant="dark" />
+                <div className='container text-center'>
+                <Spinner animation='grow' variant='dark' />
                 <h6>Cargando, por favor espere..</h6>
                 </div></>
                 : <ItemDetail {...item}/>
@@ -49,4 +49,4 @@ const ItemDetailContainer = () => {
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

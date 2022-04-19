@@ -1,11 +1,11 @@
-import { useContext } from "react"
-import { CartContext } from "./CartContext"
-import { Link } from "react-router-dom"
-import { Button } from "react-bootstrap"
-import TopBar from "./TopBar"
-import NavBar from "./NavBar"
-import Carousel from "./Carousel"
-import Footer from "./Footer"
+import { useContext } from 'react';
+import { CartContext } from './CartContext';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+import TopBar from './TopBar';
+import NavBar from './NavBar';
+import Carousel from './Carousel';
+import Footer from './Footer';
 
 const Cart = () => {
 
@@ -17,10 +17,10 @@ const Cart = () => {
                     <TopBar/>
                     <NavBar/>
                     <Carousel/>    
-                    <div className="container-fluid text-center bg-gray-400" style={{padding: "2rem 2rem 2rem 2rem"}}>
+                    <div className='container-fluid text-center bg-gray-400' style={{padding: '2rem 2rem 2rem 2rem'}}>
                     <h2>Sin productos</h2>
                     <hr/>
-                    <Link to={"/ventas"} className="btn btn-primary">Ventas</Link>
+                    <Link to={'/ventas'} className='btn btn-primary'>Ventas</Link>
                     </div>
                     <Footer/>
                 </>
@@ -29,7 +29,7 @@ const Cart = () => {
                     <TopBar/>
                     <NavBar/>
                     <Carousel/>  
-                    <div className="container-fluid text-center bg-gray-400" style={{padding: "2rem 2rem 2rem 2rem"}}>
+                    <div className='container-fluid text-center bg-gray-400' style={{padding: '2rem 2rem 2rem 2rem'}}>
                     <h2>Resumen de Compra</h2>
                     <hr/>
                     {
@@ -40,7 +40,7 @@ const Cart = () => {
                         <p>Cantidad: {item.cantidad}</p>
                         <h5>Precio Unitario: U$D {item.precio}</h5>
                         <h4>Precio Total: U$D {item.precio * item.cantidad}</h4>
-                        <Button variant="outline-primary" size="sm"
+                        <Button variant='outline-primary' size='sm'
                             onClick={() => removeItem(item.id)}
                         >Eliminar Producto
                         </Button>
@@ -50,8 +50,8 @@ const Cart = () => {
                     }
                     <h3>TOTAL: U$D{cartTotal()}</h3>
                     <hr/>
-                    <Link to={"/checkout"}><Button variant="outline-success" size="md">Finalizar Compra</Button></Link>
-                    <Button variant="outline-danger" size="md" onClick={emptyCart}>Vaciar Carrito</Button>
+                    <Link to={'/checkout'}><Button variant='outline-success' size='md'>Finalizar Compra</Button></Link>
+                    <Button variant='outline-danger' size='md' onClick={emptyCart}>Vaciar Carrito</Button>
                     </div>
                     <Footer/>
                 </>

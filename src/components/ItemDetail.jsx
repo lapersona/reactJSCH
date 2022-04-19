@@ -1,13 +1,13 @@
-import { useState, useContext } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { CartContext } from "./CartContext";
-import { Button } from "react-bootstrap";
+import { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { CartContext } from './CartContext';
+import { Button } from 'react-bootstrap';
 import '../styles/style.blue.css';
-import ItemCount from "./ItemCount"
-import NavBar from "./NavBar"
-import Footer from "./Footer"
-import TopBar from "./TopBar"
-import Carousel from "./Carousel"
+import ItemCount from './ItemCount';
+import NavBar from './NavBar';
+import Footer from './Footer';
+import TopBar from './TopBar';
+import Carousel from './Carousel';
 
 const ItemDetail = ({id, marca, modelo, img, precio, stock, detail, desc}) => {
 
@@ -42,14 +42,14 @@ const ItemDetail = ({id, marca, modelo, img, precio, stock, detail, desc}) => {
         <NavBar/>
         <Carousel/>
         <br/><br/>
-        <h2 className="container text-uppercase lined mb-4">{marca} {modelo}</h2><br></br>
-        <div className="container text-center">
+        <h2 className='container text-uppercase lined mb-4'>{marca} {modelo}</h2><br></br>
+        <div className='container text-center'>
             <br/>
-            <img src={img} alt={modelo} className="img-fluid"/>
+            <img src={img} alt={modelo} className='img-fluid'/>
             <p>{desc}</p>
             <p>{detail}</p>
             <h4>Precio: {precio} U$D</h4><br/>
-            <section style={{display: "inline-block"}}>
+            <section style={{display: 'inline-block'}}>
             <>
                 {
                     !isInCart(id) ?
@@ -59,12 +59,12 @@ const ItemDetail = ({id, marca, modelo, img, precio, stock, detail, desc}) => {
                         setCantidad={setCantidad}
                         onAdd={agregarAlCarrito}
             /> : 
-            <Link to="/cart"><Button className="btn btn-primary">Terminar Compra</Button></Link>
+            <Link to='/cart'><Button className='btn btn-primary'>Terminar Compra</Button></Link>
             }
             </>
             </section>
             <hr/>
-            <Button className="btn btn-primary" onClick={handleNavigate}>Volver</Button>
+            <Button className='btn btn-primary' onClick={handleNavigate}>Volver</Button>
         </div><br/>
         <Footer/>
         </>
