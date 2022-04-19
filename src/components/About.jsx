@@ -1,13 +1,15 @@
 import TopBar from './TopBar';
 import NavBar from './NavBar';
+import Carousel from './Carousel';
 import Footer from './Footer';
 
 function About() {
 
     return(
-        <div>
+        <>
         <TopBar/>
         <NavBar/>
+        <Carousel/>
         <section className='py-5 bg-fixed bg-gray-300'>
         <div className='container py-4'>
           <header className='mb-5'>
@@ -27,7 +29,7 @@ function About() {
         </div>
         </section>
         <Footer/>
-        </div>
+        </>
     );
 }
 

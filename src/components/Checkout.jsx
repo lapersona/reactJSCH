@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import Carousel from './Carousel';
 import Footer from './Footer';
 import swal from 'sweetalert';
+import jsPDF from 'jspdf';
 import { useContext, useState } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { CartContext } from './CartContext';
@@ -11,6 +12,19 @@ import { db } from '../firebase/config';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
 
 const Checkout = () => {
+
+    const print = () => {
+        var doc = new jsPDF();
+        doc.html(document.body, {
+        callback: function (doc) {
+                    doc.save();
+                },
+        x: 10,
+        y: 10,
+        html2canvas: {
+            scale: 0.08,
+        }});     
+    }
 
     const {cart, cartTotal, emptyCart} = useContext(CartContext);
 
@@ -85,6 +99,7 @@ const Checkout = () => {
                 <h6>Celular: {values.cellphone}</h6>
                 <hr/>
                 <Link to='/'><Button className='btn btn-primary'>Home</Button></Link>
+                <Button className='btn btn-primary m-2' onClick={print}>Imprimir</Button>
             </div>
             <Footer/>
             </>

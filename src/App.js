@@ -7,6 +7,7 @@ import ManteHabilit from './components/ManteHabilit';
 import Ventas from './components/Ventas';
 import Cirrus from './components/Cirrus';
 import NotFound from './components/NotFound';
+import Contact from './components/Contact';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { CartProvider } from './components/CartContext';
 import Cart from './components/Cart';
@@ -23,6 +24,7 @@ function App() {
           <Route path='/mantyhabilit' element={<ManteHabilit/>}/>
           <Route path='/ventas' element={<Ventas/>}/>
           <Route path='/cirrus' element={<Cirrus/>}/>
+          <Route path='/contacto' element={<Contact/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/detail/:itemId' element={ <ItemDetailContainer/> } />
           <Route path='/checkout' element={<Checkout/>}/>
