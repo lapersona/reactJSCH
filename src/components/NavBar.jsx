@@ -27,12 +27,12 @@ function NavBar() {
                 <li className='nav-item dropdown menu-large'><a className='nav-link' role='button' aria-expanded='false' href=' '>MANTENIMIENTO Y HABILITACIONES</a>
                 </li>
                 </Link>
-                <Link className='btn btn-outline-light btn-sm' to='/ventas'>
-                <li className='nav-item dropdown'><a className='nav-link' id='contactMegamenu' role='button' data-bs-toggle='dropdown' aria-expanded='false' href=' '>VENTAS AVIONICA</a>
-                </li>
-                </Link>
                 <Link className='btn btn-outline-light btn-sm' to='/cirrus'>
                 <li className='nav-item dropdown'><a className='nav-link' id='contactMegamenu' role='button' data-bs-toggle='dropdown' aria-expanded='false' href=' '>CIRRUS AIRCRAFT</a>
+                </li>
+                </Link>
+                <Link className='btn btn-outline-light btn-sm' to='/ventas'>
+                <li className='nav-item dropdown'><a className='nav-link' id='contactMegamenu' role='button' data-bs-toggle='dropdown' aria-expanded='false' href=' '>VENTAS AVIONICA</a>
                 </li>
                 </Link>
               </ul>
