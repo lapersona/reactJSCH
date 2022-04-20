@@ -2,14 +2,14 @@ import TopBar from './TopBar';
 import NavBar from './NavBar';
 import Carousel from './Carousel';
 import Footer from './Footer';
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 import jsPDF from 'jspdf';
 import { useContext, useState } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { CartContext } from './CartContext';
 import { Button } from 'react-bootstrap';
 import { db } from '../firebase/config';
-import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { collection, addDoc, Timestamp, doc, updateDoc, getDoc } from 'firebase/firestore';
 
 const Checkout = () => {
 
@@ -48,7 +48,12 @@ const Checkout = () => {
         e.preventDefault();
         if (values.name === '' || values.email === '' || values.address === '' || values.cellphone === '') {
 
-            swal('Error', 'Porfavor, complete todos los datos de comprador.', 'error');
+            swal.fire({
+                title: 'Error',
+                html: 'Porfavor, complete todos los datos de comprador.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
 
         } else {
 
@@ -61,24 +66,46 @@ const Checkout = () => {
         
         const ordersRef = collection(db, 'orders');
         
-        swal('Enviando pedido', 'Espere un momento por favor...', 'info', {
-            timer: 2000,
-            buttons: false,
+        swal.fire({
+            icon: 'loading',
+            title: 'Enviando pedido',
+            html: 'Espere un momento por favor...',
+            timer: 4000,
+            timerProgressBar: true,
         });
 
-        setTimeout(() => {
-        addDoc(ordersRef, order)
-            .then((doc) => {
-                setOrderId(doc.id);
-                emptyCart();
-            }, 4000);
+        cart.forEach((item) => {
+            const docRef = doc(db, 'productos', item.id)
+            getDoc(docRef)
+                .then((doc) => {
+                    if (doc.data().stock >= item.cantidad) {
+                        updateDoc(docRef, {
+                            stock: doc.data().stock - item.cantidad
+                        })
+                        addDoc(ordersRef, order)
+                            .then((doc) => {
+                            setOrderId(doc.id);
+                            emptyCart();
+                        })
+                        } else {
+                        swal.fire({
+                            title: 'Error, no hay stock suficiente del producto ' + item.marca + ' ' + item.modelo,
+                            icon: 'error',
+                            showDenyButton: false,
+                            showCancelButton: false,
+                            confirmButtonText: 'Volver a intentar',
+                        })
+                    }
+                })
         })
     }}
 
     if (orderId) {
-        swal('Pedido enviado', 'Su pedido ha sido enviado con éxito.', 'success', {
-            timer: 2000,
-            buttons: false,
+        swal.fire({
+            title: 'Pedido enviado',
+            html: 'Su pedido ha sido enviado con éxito. <br/>Su número de pedido es: ' + orderId,
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
         });
         return (
             <>
