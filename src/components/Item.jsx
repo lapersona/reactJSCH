@@ -7,7 +7,7 @@ function Item(props) {
     
   return (
     <>
-    <div className='item-card text-center bg-gray-400' style={{paddingTop: '2rem'}}>
+    <div className='item-card text-center' style={{paddingTop: '2rem'}}>
       <div>
         <h1 className='text-uppercase'>{props.item.marca}</h1>
         <h3>{props.item.modelo}</h3>

@@ -9,7 +9,7 @@ function ItemList(props) {
       {props.itemList.length > 0 ? (
         <>
         <h2 className='container text-uppercase lined mb-4'>Avionica</h2><br></br>
-        <div className='container text-center bg-gray-400'>
+        <div className='container text-center'>
           <header className='mb-5 d-inline-block'>
               {props.itemList.map((item) => {
               return <Item key={item.id} item={item} />;

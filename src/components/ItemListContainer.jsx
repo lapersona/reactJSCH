@@ -20,11 +20,10 @@ function ItemListContainer() {
   },[categoryId]);
 
   return (
-    <div className='bg-gray-400'>
+    <div>
       <br/><br/>
       <ItemList itemList={itemList} />
       </div>
-    
   );
 }
 

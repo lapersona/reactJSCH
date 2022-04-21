@@ -55,7 +55,17 @@ const Checkout = () => {
                 confirmButtonText: 'Aceptar'
             });
 
-        } else {
+        } else if ( values.email !== values.emailConfirm) {
+
+            swal.fire({
+                title: 'Error',
+                html: 'Los correos electrónicos no coinciden.',
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        }
+    
+        else {
 
         const order = {
             items: cart,
@@ -198,6 +208,16 @@ const Checkout = () => {
                     size={70}
                     name='email'
                     value={values.email}
+                    onChange={handleInputChange}
+                    autoComplete='off'
+                />
+                <input
+                    className='form-control bg-gray-100'
+                    type='email'
+                    placeholder='Confirmacion de Email'
+                    size={70}
+                    name='emailConfirm'
+                    value={values.emailConfirm}
                     onChange={handleInputChange}
                     autoComplete='off'
                 />

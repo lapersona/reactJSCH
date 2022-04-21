@@ -3,47 +3,32 @@ import '../styles/style.blue.css';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope , faPhone } from '@fortawesome/free-solid-svg-icons';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import CartWidget from './CartWidget';
 
 function NavBar() {
     return (
       <header className='nav-holder'>
-        <div className='navbar navbar-light bg-white navbar-expand-lg py-0' id='navbar'>
-          <div className='container py-3 py-lg-0 px-lg-0'>
-            <Link to='/'><a className='navbar-brand' href='/'>
-              <img className=' d-md-inline-block' src={logo} alt='Cielo logo'></img></a></Link>
-              <button className='navbar-toggler text-primary border-primary' type='button' data-bs-toggle='collapse' data-bs-target='#navigationCollapse' aria-controls='navigationCollapse' aria-expanded='false' aria-label='Toggle navigation'><span className='sr-only'>Toggle navigation</span><i className='fas fa-align-justify'></i></button>
-              <div className='collapse navbar-collapse' id='navigationCollapse'>
-              <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
-                <Link className='btn btn-outline-light btn-sm' to='/'>
-                <li className='nav-item dropdown'><a className='nav-link' id='hpDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false' href=' '>HOME</a>
-                </li>
-                </Link>
-                <Link className='btn btn-outline-light btn-sm' to='/about'>
-                <li className='nav-item menu-large'><a className='nav-link' aria-expanded='false' href=' '>QUIENES SOMOS</a>
-                </li>
-                </Link>
-                <Link className='btn btn-outline-light btn-sm' to='/mantyhabilit'>
-                <li className='nav-item dropdown menu-large'><a className='nav-link' role='button' aria-expanded='false' href=' '>MANTENIMIENTO Y HABILITACIONES</a>
-                </li>
-                </Link>
-                <Link className='btn btn-outline-light btn-sm' to='/cirrus'>
-                <li className='nav-item dropdown'><a className='nav-link' id='contactMegamenu' role='button' data-bs-toggle='dropdown' aria-expanded='false' href=' '>CIRRUS AIRCRAFT</a>
-                </li>
-                </Link>
-                <Link className='btn btn-outline-light btn-sm' to='/ventas'>
-                <li className='nav-item dropdown'><a className='nav-link' id='contactMegamenu' role='button' data-bs-toggle='dropdown' aria-expanded='false' href=' '>VENTAS AVIONICA</a>
-                </li>
-                </Link>
-              </ul>
-              <div >
-                <Link to='/contacto'><FontAwesomeIcon icon={faEnvelope} style={{marginRight: '8px', marginLeft: '8px'}}/></Link>
-                <FontAwesomeIcon icon={faPhone} style={{marginRight: '8px', color: '#467FBF'}}/>
-                <CartWidget/>
-            </div>
-            </div>
-          </div>
-        </div>
+        <Navbar collapseOnSelect expand="lg" bg="withe" className='text-center'>
+        <Container>
+        <Link to='/'><Navbar.Brand href="#home"><img className=' d-md-inline-block' src={logo} alt='Cielo logo'></img></Navbar.Brand></Link>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+          <Nav.Link href="/">HOME</Nav.Link>
+          <Nav.Link href="/about">QUIENES SOMOS</Nav.Link>
+          <Nav.Link href="/mantyhabilit">MANTENIMIENTO Y HABILITACIONES</Nav.Link>
+          <Nav.Link href="/cirrus">CIRRUS AIRCRAFT</Nav.Link>
+          <Nav.Link href="/ventas">VENTAS</Nav.Link>
+        </Nav>
+        <Nav>
+          <Nav.Link href='/contacto'><FontAwesomeIcon icon={faEnvelope} style={{color: '#467FBF'}}/></Nav.Link>
+          <Nav.Link href='/contacto'><FontAwesomeIcon icon={faPhone} style={{color: '#467FBF'}}/></Nav.Link>
+          <Nav.Link><CartWidget/></Nav.Link>
+        </Nav>
+        </Navbar.Collapse>
+        </Container>
+        </Navbar>
       </header>
     );
 }

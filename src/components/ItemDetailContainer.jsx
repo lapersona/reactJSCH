@@ -31,7 +31,7 @@ const ItemDetailContainer = () => {
     
 
     return (
-        <div className='container-fluid bg-gray-400' style={{paddingRight:'0px', paddingLeft:'0px'}}>
+        <div className='container-fluid' style={{paddingRight:'0px', paddingLeft:'0px'}}>
             {
                 loading
                 ? 
