@@ -12,8 +12,8 @@ function Item(props) {
         <h1 className='text-uppercase'>{props.item.marca}</h1>
         <h3>{props.item.modelo}</h3>
         <h4>{props.item.desc}</h4>
-        <div>
-          <img className='img img-fluid' style={{width: '40%', height: '40%'}} src={props.item.img} alt='img' />
+        <div className='text-center'>
+          <img className='img img-fluid' style={{width: '50%', height: '50%'}} src={props.item.img} alt='img' />
         </div><br/>
         <Link to={`/detail/${props.item.id}`}><Button variant='outline-primary' size='sm'>
           Mas Informacion

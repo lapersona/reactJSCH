@@ -1,15 +1,14 @@
 import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { CartContext } from './CartContext';
-import { Button } from 'react-bootstrap';
+import { Button, Carousel } from 'react-bootstrap';
 import '../styles/style.blue.css';
 import ItemCount from './ItemCount';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import TopBar from './TopBar';
-import Carousel from './Carousel';
 
-const ItemDetail = ({id, marca, modelo, img, precio, stock, detail, desc}) => {
+const ItemDetail = ({id, marca, modelo, img, img2, precio, stock, detail, desc}) => {
 
     const { addItem, isInCart } = useContext(CartContext)
 
@@ -40,12 +39,31 @@ const ItemDetail = ({id, marca, modelo, img, precio, stock, detail, desc}) => {
         <>
         <TopBar/>
         <NavBar/>
-        <Carousel/>
+        <section className='py-5 dark-overlay-xl ventas-back'>
+            <br/><br/><br/><br/><br/>
+        </section>
         <br/><br/>
         <h2 className='container text-uppercase lined mb-4'>{marca} {modelo}</h2><br></br>
         <div className='container text-center'>
             <br/>
-            <img src={img} alt={modelo} className='img-fluid'/>
+            <Carousel variant='dark'>
+            <Carousel.Item>
+              <img
+                className="img img-fluid text-center"
+                style={{width: '50%', height: '50%'}}
+                src={img}
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="img img-fluid"
+                style={{width: '50%', height: '50%'}}
+                src={img2}
+                alt="Second slide"
+              />
+            </Carousel.Item>
+          </Carousel>
             <p>{desc}</p>
             <p>{detail}</p>
             <h4>Precio: {precio} U$D</h4><br/>
