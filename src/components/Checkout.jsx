@@ -183,7 +183,7 @@ const Checkout = () => {
                 />
                 <input
                     className='form-control bg-gray-100'
-                    type='number'
+                    type='cellphone'
                     placeholder='Celular'
                     size={50}
                     name='cellphone'
