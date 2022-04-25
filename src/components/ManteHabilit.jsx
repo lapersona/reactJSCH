@@ -34,7 +34,7 @@ function ManteHabilit() {
                         <li><strong>PIPER:</strong> Navajo PA31-300, Navajo PA31-310, Navajo PA31-325, Navajo PA31-350 Chieftain, Navajo PA31P-350 Mojave, Seneca II PA-34-200/T, Seneca III PA34-220T, Cheyenne I PA31-T-500, Cheyenne II PA31-T-620, Cheyenne III PA42-720, CheyennePA42-1000.</li>
                         <li><strong>BRITTEN NORMAN:</strong> BN-2B.</li><br/><br/><br/>
                         <div className='d-flex justify-content-evenly'>
-                            <a href='https://www.anac.gov.ar/anac/web/'><img src={Anac} alt='ANAC Logo'></img></a>
+                            <a href='https://www.anac.gov.ar/anac/web/'><img className='img img-fluid' src={Anac} alt='ANAC Logo'></img></a>
                         </div>
                     </ul>
                 </div>
